@@ -59,7 +59,7 @@
     </div>
   </div>
   
-  <audio id="rickroll" src="https://ia801602.us.archive.org/11/items/g_20210313/g.mp3"></audio>
+  <audio id="rickroll" src="https://hlrjxruredsmabkkqhhu.supabase.co/storage/v1/object/public/files/1781872597867-2og8hl-Rick_Astley_-_Never_Gona_Give_You_Up_(mp3.pm).mp3"></audio>
   
   <div class="confetti-container">
     <div class="confetti confetti-animation-medium" style="left: 19px; width: 9px; height: 9px; background-color: rgb(244, 48, 109);"></div>
@@ -93,16 +93,14 @@
   
   if(cardWrapper && audio) {
     cardWrapper.addEventListener('click', () => {
-      // Bật/tắt class active để lật thiệp
       cardWrapper.classList.toggle('active');
       
-      // Kiểm tra trạng thái lật thiệp để điều khiển nhạc
       if (cardWrapper.classList.contains('active')) {
-        // Khi mở thiệp: Phát nhạc từ đầu
+        // Mở thiệp -> Phát từ đầu bài
         audio.currentTime = 0; 
-        audio.play().catch(e => console.log("Trình duyệt chặn tự động phát, cần tương tác thêm."));
+        audio.play().catch(e => console.log("Trình duyệt chặn phát tự động khi chưa có tương tác trước đó."));
       } else {
-        // Khi đóng thiệp: Dừng nhạc hoàn toàn
+        // Đóng thiệp -> Dừng bài nhạc
         audio.pause();
         audio.currentTime = 0;
       }
@@ -110,4 +108,4 @@
   }
 </script>
 </body>
-    </html>
+              </html>
